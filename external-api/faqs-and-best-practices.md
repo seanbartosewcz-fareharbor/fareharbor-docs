@@ -175,7 +175,7 @@ the FareHarbor system.
 ## Question: Webhook security
 
 How can I guarantee that the webhook we receive is from FareHarbor,
-and not from someone else who somehow guessed the URL?
+and not from someone else who somehow guessed the URL? 
 
 ### Answer
 
@@ -194,6 +194,10 @@ Or if you prefer, you can use something like
     
 and check that you receive the expected query parameter.
 
+These webhook URLs are stored securely in the FareHarbor database, and
+are visible on the FareHarbor dashboard only to authenticated users,
+so if you do not share them, they can be a "shared secret".
+
 #### Call the External API to verify booking data
 
 *NOTE: External API access is granted on a on a case by case basis. To request access please contact your Account Manager or [FareHarbor Support](https://fareharbor.com/help/).*
@@ -209,8 +213,11 @@ Then use the retrieved data rather than the webhook payload data.
 
 This eliminates the potential negative impact of any "forged"
 webhook. So even if someone does ascertain your webhook URL, they will
-not be able to compromise your data integrity.
-    
+not be able to compromise your data.
+
+Furthermore, using the External API in this way removes any
+uncertainty about webhook arrival sequence.
+
 #### Using IP address-based ACLs or allowlists to validate the source of webhooks
 
 Because FareHarbor uses distributed cloud computing, our servers' IP
