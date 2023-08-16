@@ -94,6 +94,15 @@ booking. Regardless of which you cancel, booking A will wind up with
 depending how your system is set up, the path of least confusion on
 your side may be to CANCEL THE MOST RECENT BOOKING.
 
+## Question: Supporting Translations
+
+Does the External API support company translations? 
+
+### Answer
+
+Yes, if a language parameter is set at the end of the request (&language=pt) and the company has filled the translated content in the dashboard. FareHarbor currently supports the following translastions if those are "active" in the dashboard: [Supported Languages](https://help.fareharbor.com/dashboard/communication/language-translation/#supported-languages) 
+
+
 
 # FH API Integration Best Practices
 
